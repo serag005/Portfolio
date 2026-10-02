@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serag Eldin Yasser | Data Analyst & ML Specialist</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0f1d;
+            --bg-card: rgba(16, 24, 48, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --accent: #34d399;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --glass: rgba(15, 23, 42, 0.75);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cv-btn {
+            padding: 0.45rem 1rem !important;
+            border-radius: 0.4rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--primary) !important;
+            font-weight: 600 !important;
+        }
+
+        .nav-cv-btn:hover {
+            background: var(--primary) !important;
+            color: #04101e !important;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8.5rem 0 4.5rem;
+            text-align: center;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 165px;
+            height: 165px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.25);
+            background: #0f172a;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-glow {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            filter: blur(12px);
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 9999px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 3.25rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #04101e;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-cv {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            color: #04101e;
+        }
+
+        .btn-cv:hover {
+            box-shadow: 0 0 20px rgba(129, 140, 248, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-header h2 i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* Glass Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-4px);
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Skills Tags */
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.8rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            margin: 0.25rem;
+        }
+
+        /* Experience & Projects */
+        .item-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: #fff;
+        }
+
+        .item-subtitle {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item-body {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+
+        .project-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Contact Details */
+        .contact-box {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 1.5rem;
+            background: linear-gradient(180deg, rgba(16, 24, 48, 0.9) 0%, rgba(8, 12, 24, 0.9) 100%);
+            border: 1px solid var(--border);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <div class="logo">Serag Eldin.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="https://drive.google.com/file/d/1To71H3g9LoutJpMWLdbqUq-r1eS-8Enb/view?usp=drive_link" target="_blank" class="nav-cv-btn"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <!-- Profile Avatar -->
+            <div class="profile-img-container">
+                <div class="profile-glow"></div>
+                <img src="profile.jpg" alt="Serag Eldin Yasser" class="profile-img">
+            </div>
+
+            <span class="badge"><i class="fa-solid fa-code-branch"></i> Open for Freelance & Analytics Roles</span>
+            <h1>Turning Messy Data into<br><span>Executive Intelligence</span></h1>
+            <p>Data Analyst & Machine Learning Specialist. Focused on end-to-end automated pipelines, interactive Power BI dashboards, and high-accuracy predictive systems.</p>
+            <div class="cta-btns">
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-folder-open"></i> View Projects</a>
+                <a href="https://drive.google.com/file/d/1To71H3g9LoutJpMWLdbqUq-r1eS-8Enb/view?usp=drive_link" target="_blank" class="btn btn-cv"><i class="fa-solid fa-file-pdf"></i> View Resume / CV</a>
+                <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- 01 About & Education -->
+        <section id="about">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="section-header" style="margin-bottom: 1.5rem;">
+                        <h2><i class="fa-solid fa-user"></i> About Me</h2>
+                    </div>
+                    <p class="item-body">
+                        I specialize in Business Intelligence and machine learning, turning complex operational data into automated pipelines and decision-ready dashboards.
+                    </p>
+                    <p class="item-body">
+                        My expertise spans the entire pipeline: from backend database design (MS SQL Server, MySQL) and Python (Pandas) ETL architectures, up to interactive Power BI visualization and predictive machine learning models.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="section-header" style="margin-bottom: 1.5rem;">
+                        <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+                    </div>
+                    <div class="item-title">B.Sc. in Computers & Information</div>
+                    <div class="item-subtitle">
+                        <span>Sadat Academy for Management Sciences</span>
+                        <span>2023 – 2027</span>
+                    </div>
+                    <p class="item-body">
+                        <strong>Track:</strong> Data Science<br>
+                        <strong>Cumulative GPA:</strong> 3.5 / 4.0
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 Skills & Services -->
+        <section id="skills">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-gears"></i> Core Competencies</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="item-title" style="font-size: 1.1rem; color: var(--primary); margin-bottom: 1rem;">
+                        <i class="fa-solid fa-database"></i> Data & BI
+                    </div>
+                    <div>
+                        <span class="skill-tag">Python (Pandas)</span>
+                        <span class="skill-tag">MS SQL Server</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">ETL Automation</span>
+                        <span class="skill-tag">DAX & Modeling</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="item-title" style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 1rem;">
+                        <i class="fa-solid fa-brain"></i> Machine Learning
+                    </div>
+                    <div>
+                        <span class="skill-tag">Scikit-Learn</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Ensemble Models</span>
+                        <span class="skill-tag">Time Series (SARIMA)</span>
+                        <span class="skill-tag">Deep MLP</span>
+                        <span class="skill-tag">EDA & Statistics</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="item-title" style="font-size: 1.1rem; color: var(--accent); margin-bottom: 1rem;">
+                        <i class="fa-solid fa-code"></i> Development & Tools
+                    </div>
+                    <div>
+                        <span class="skill-tag">Dynamics 365 CRM</span>
+                        <span class="skill-tag">JavaScript / Node.js</span>
+                        <span class="skill-tag">Express.js REST APIs</span>
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">Adobe Premiere Pro</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 Experience -->
+        <section id="experience">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="item-title">Data Analytics & BI Intern</div>
+                    <div class="item-subtitle">
+                        <span>Sanipure</span>
+                        <span>Summer 2026</span>
+                    </div>
+                    <p class="item-body">
+                        • Designed and deployed an automated ETL pipeline for customer satisfaction (CSAT) analytics from live MS SQL Server records.<br>
+                        • Built executive-facing Power BI dashboards tracking satisfaction drivers and complaints, architected for Microsoft Dynamics 365 CRM integration.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="item-title">Freelance Video Editor</div>
+                    <div class="item-subtitle">
+                        <span>Independent</span>
+                        <span>2019 – 2023</span>
+                    </div>
+                    <p class="item-body">
+                        • Edited and delivered high-retention video content for YouTube creators using Adobe Premiere Pro.<br>
+                        • Managed complete freelance client workflows: briefs, strict deadlines, and iterative client revisions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 Selected Projects -->
+        <section id="projects">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-diagram-project"></i> Selected Work Samples</h2>
+            </div>
+            <div class="grid-2">
+                <!-- Project 1: Sanipure -->
+                <div class="card">
+                    <div>
+                        <div class="item-title">Sanipure BI & ETL Pipeline</div>
+                        <div class="item-subtitle">Business Intelligence & CRM Integration</div>
+                        <p class="item-body">
+                            Automated extraction, cleaning (Pandas), and visualization of customer service data with Dynamics 365 CRM readiness and MS SQL database connectivity.
+                        </p>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="skill-tag">MS SQL</span>
+                            <span class="skill-tag">Python (Pandas)</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Dynamics 365</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <span style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-solid fa-lock"></i> Enterprise Client Engagement (NDA)</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: PULSE -->
+                <div class="card">
+                    <div>
+                        <div class="item-title">PULSE Web Platform</div>
+                        <div class="item-subtitle">Full-Stack Development & Database Design</div>
+                        <p class="item-body">
+                            Accessibility-focused platform connecting amputees with prosthetics and donors. Developed backend REST APIs, MySQL connection pooling, and IEEE SRS architecture.
+                        </p>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">REST APIs</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/serag005/Pulse" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repository</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Movie Success -->
+                <div class="card">
+                    <div>
+                        <div class="item-title">Movie Success Prediction Model</div>
+                        <div class="item-subtitle">Machine Learning & Deep Learning</div>
+                        <p class="item-body">
+                            Comprehensive predictive pipeline evaluating box-office performance across 10,000+ films using Ensemble algorithms (Gradient Boosting: 95.05% acc) and PyTorch 1D CNN.
+                        </p>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="skill-tag">Scikit-Learn</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">Ensemble ML</span>
+                            <span class="skill-tag">EDA</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/12Md6mvgMTDyFYd99uG2eUGo_evD0aiE7?usp=drive_link" target="_blank"><i class="fa-brands fa-google-drive"></i> View Drive Files & Notebooks</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Power Consumption -->
+                <div class="card">
+                    <div>
+                        <div class="item-title">Power Consumption Forecasting</div>
+                        <div class="item-subtitle">Time Series & Predictive Modeling</div>
+                        <p class="item-body">
+                            A complete 5-phase statistical and deep learning study on 52,000+ real records. Implemented SARIMA (5.83% MAPE) and Deep MLP neural networks (4.1% MAPE).
+                        </p>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="skill-tag">Time Series</span>
+                            <span class="skill-tag">SARIMA</span>
+                            <span class="skill-tag">Deep MLP</span>
+                            <span class="skill-tag">Statsmodels</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1tZ7DOFC0D_rEk2-Jowand2GCQdbpCcoc?usp=drive_link" target="_blank"><i class="fa-brands fa-google-drive"></i> View Drive Folder & Report</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 Certifications -->
+        <section id="achievements">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-award"></i> Certifications & Honors</h2>
+            </div>
+            <div class="card">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-certificate" style="color: var(--primary); margin-right: 0.5rem;"></i> <strong>HCIP-Big Data Developer V2.0</strong> — Huawei ICT Academy (2026)</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-certificate" style="color: var(--primary); margin-right: 0.5rem;"></i> <strong>HCIA Certifications:</strong> Big Data V3.5, AI V4.0, Cloud Computing V5.5 — Huawei ICT Academy (2026)</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-certificate" style="color: var(--secondary); margin-right: 0.5rem;"></i> <strong>Machine Learning Internship Program</strong> — Elevvo Pathways (2025)</li>
+                    <li><i class="fa-solid fa-certificate" style="color: var(--accent); margin-right: 0.5rem;"></i> <strong>Data Science & Machine Learning Sprints</strong> — DataCamp (2025)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 06 Contact Section -->
+        <section id="contact">
+            <div class="contact-box">
+                <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem;">Ready to turn your data into decisions?</h2>
+                <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 2rem;">
+                    Whether you need an automated reporting pipeline or a custom machine learning model, feel free to reach out.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="mailto:seragkamara@gmail.com" class="btn btn-primary" style="font-size: 1.05rem;">
+                        <i class="fa-solid fa-envelope"></i> seragkamara@gmail.com
+                    </a>
+                    <a href="https://drive.google.com/file/d/1To71H3g9LoutJpMWLdbqUq-r1eS-8Enb/view?usp=drive_link" target="_blank" class="btn btn-outline" style="font-size: 1.05rem;">
+                        <i class="fa-solid fa-file-pdf"></i> Download Resume
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/serag-kamara" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/serag005" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="tel:+201150582327" class="social-btn" title="Phone"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Serag Eldin Yasser. Designed for DEPI Freelance Portfolio.</p>
+    </footer>
+
+</body>
+</html>
